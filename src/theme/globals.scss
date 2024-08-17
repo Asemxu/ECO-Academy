@@ -7,6 +7,22 @@
 $font-path: "../assets/fonts";
 $assets-path: "../assets";
 
+.login-form-container-parent{
+	--background: rgb(57,170,230)!important;
+	--background: linear-gradient(180deg, rgba(57,170,230,1) %, rgba(36,60,113,1) 100%)!important;
+}
+a
+
+.core-login-form{
+	padding:2rem
+}
+
+.input-rebrand{
+	border-radius:1rem;
+	padding:0 1rem!important
+}
+
+
 @import "./helpers/helpers.scss";
 @import "./globals.custom.scss";
 @import "./globals.variables.scss";
