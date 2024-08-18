@@ -31,7 +31,7 @@ import { CoreDirectivesRegistry } from '@singletons/directives-registry';
 })
 export class CoreContextMenuComponent implements OnInit, OnDestroy {
 
-    @Input() icon = 'ellipsis-vertical'; // Icon to be shown on the navigation bar. Default: Kebab menu icon.
+    @Input() icon = 'menu'; // Icon to be shown on the navigation bar. Default: Kebab menu icon.
     @Input('aria-label') ariaLabel?: string; // Aria label to be shown on the top of the popover.
 
     /**

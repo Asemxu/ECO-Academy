@@ -15,12 +15,17 @@ ion-searchbar,
     }
 
     .searchbar-input {
-        --border-radius: var(--mdl-shape-borderRadius-xs);
+        // --border-radius: var(--mdl-shape-borderRadius-xs);
+        --border-radius: 2rem;
 
         height: var(--height) !important;
-        border: 1px solid var(--border-color) !important;
+        // border: 1px solid var(--border-color) !important;
+        border: 1px solid #39aae6 !important;
+
         box-shadow: none !important;
-        border-radius: var(--border-radius) !important;
+        // border-radius: var(--border-radius) !important;
+        border-radius: 2rem;
+
         background: var(--background) !important;
         @include padding-horizontal(var(--height) !important);
     }

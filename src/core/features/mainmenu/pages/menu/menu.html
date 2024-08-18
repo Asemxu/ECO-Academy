@@ -1,12 +1,12 @@
 <ion-tabs #mainTabs [hidden]="!showTabs" [class]="'placement-' + tabsPlacement"
     [class.tabshidden]="!isMainScreen && tabsPlacement === 'bottom'" (ionTabsDidChange)="tabChanged($event)">
-    <ion-tab-bar slot="bottom" class="mainmenu-tabs" [@menuVisibilityAnimation]="visibility">
+    <ion-tab-bar slot="bottom" class="mainmenu-tabs tab-menu-bottom" [@menuVisibilityAnimation]="visibility">
         <ion-spinner *ngIf="!loaded" [attr.aria-label]="'core.loading' | translate" />
 
         <core-user-menu-button *ngIf="loaded && tabsPlacement === 'side'" [alwaysShow]="true" />
 
         <ion-tab-button *ngFor="let tab of tabs" (keydown)="tabAction.keyDown(tab.page, $event)" (keyup)="tabAction.keyUp(tab.page, $event)"
-            [hidden]="!loaded && tab.hide" [tab]="tab.page" [disabled]="tab.hide" layout="label-hide" class="{{tab.class}}"
+            [hidden]="!loaded && tab.hide" [tab]="tab.page" [disabled]="tab.hide" layout="label-hide" class="{{tab.class}} btn-menu-bottom"
             [selected]="tab.page === selectedTab" [tabindex]="selectedTab === tab.page ? 0 : -1" [attr.aria-controls]="tab.id">
             <ion-icon class="core-tab-icon" [name]="tab.icon" aria-hidden="true" />
             <ion-label aria-hidden="true">{{ tab.title | translate }}</ion-label>
@@ -19,7 +19,7 @@
 
         <ion-tab-button (keydown)="tabAction.keyDown(morePageName, $event)" (keyup)="tabAction.keyUp(morePageName, $event)"
             [hidden]="!loaded" [tab]="morePageName" layout="label-hide" [tabindex]="selectedTab === morePageName ? 0 : -1"
-            [attr.aria-controls]="morePageName">
+            [attr.aria-controls]="morePageName" class="btn-menu-bottom">
             <ion-icon class="core-tab-icon" name="ellipsis-horizontal" aria-hidden="true" />
             <ion-label aria-hidden="true">{{ 'core.more' | translate }}</ion-label>
             <span class="sr-only">{{ 'core.more' | translate }}</span>

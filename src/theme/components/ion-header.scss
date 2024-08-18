@@ -76,7 +76,19 @@ ion-header.header-md {
             }
 
             .core-header-sitename {
-                display: var(--core-mainpage-sitename-display);
+                // display: var(--core-mainpage-sitename-display);
+                color: #3258a1;
+                font-size: 12px;
+                max-width: 85%;
+                overflow: hidden;
+                text-transform: lowercase;
+                display: block;
+                border: 1px solid #3258a1;
+                padding: 0.5rem;
+                border-radius: 2rem;
+            }
+            .core-header-sitename::first-letter {
+                text-transform: uppercase;
             }
         }
 

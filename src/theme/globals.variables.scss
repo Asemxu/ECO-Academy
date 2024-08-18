@@ -29,7 +29,7 @@ $text-color-rgb:           color-to-rgb-list($text-color) !default;
 $text-color-dark:          $white !default;
 $text-color-dark-rgb:      color-to-rgb-list($text-color-dark) !default;
 
-$background-color:          $white !default;
+$background-color:          $white;
 $background-color-rgb:      color-to-rgb-list($background-color) !default;
 $background-color-dark:     $gray-900 !default; // #1a1a1a
 $background-color-dark-rgb: color-to-rgb-list($background-color-dark) !default;
@@ -159,3 +159,13 @@ $calendar-event-category-colors: (
     user: $calendar-event-category-user,
     site: $calendar-event-category-site,
 ) !default;
+
+.btn-menu-bottom{
+    background:#223161!important ;
+}
+
+.btn-menu-bottom:not(.tab-selected){
+    & ion-icon{
+        color:white!important
+    }
+}

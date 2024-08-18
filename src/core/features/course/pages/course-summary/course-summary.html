@@ -1,7 +1,9 @@
+<!-- eslint-disable max-len -->
 <ion-header class="no-title">
     <ion-toolbar>
         <ion-buttons slot="start">
-            <ion-back-button [text]="'core.back' | translate" />
+            <ion-back-button style="color:#3258a1;font-size:1rem;--icon-font-size:2.5rem" icon="arrow-back-circle"
+                [text]="'core.back' | translate" />
         </ion-buttons>
         <ion-title />
         <ion-buttons slot="end" *ngIf="isModal">
@@ -16,35 +18,42 @@
         <ion-refresher-content pullingText="{{ 'core.pulltorefresh' | translate }}" />
     </ion-refresher>
     <core-loading [hideUntil]="dataLoaded">
-        <div *ngIf="course" class="core-course-thumb" #courseThumb>
-            <img *ngIf="course.courseimage" [url]="course.courseimage" core-external-content alt="" (error)="loadFallbackCourseIcon()" />
+        <ion-label *ngIf="course">
+            <h1 class="core-course-shortname" style="color:#3258a1;font-weight: 800;margin: .75rem 0 0 4rem">
+                <core-format-text [text]="course.shortname + 'Prueba'" contextLevel="course" [contextInstanceId]="course?.id" />
+            </h1>
+        </ion-label>
+        <div style="position:relative;height:250px;margin-bottom:2rem;display:flex;overflow:visible" *ngIf="course"
+            class="core-course-thumb" #courseThumb>
+            <img style="margin:2rem 1rem 1rem 1rem;border-radius:1rem" *ngIf="course.courseimage" [url]="course.courseimage"
+                core-external-content alt="" (error)="loadFallbackCourseIcon()" />
             <ion-icon *ngIf="!course.courseimage" name="fas-graduation-cap" class="course-icon" aria-hidden="true" />
         </div>
-        <div *ngIf="course" class="course-container">
+        <div style="top:0" *ngIf="course" class="course-container">
             <div class="list-item-limited-width">
                 <ion-item class="ion-text-wrap course-name">
                     <ion-label>
-                        <p *ngIf="course.displayname && course.shortname && course.fullname !== course.displayname"
+                        <!-- <p *ngIf="course.displayname && course.shortname && course.fullname !== course.displayname"
                             class="core-course-shortname">
                             <core-format-text [text]="course.shortname" contextLevel="course" [contextInstanceId]="course.id" />
-                        </p>
-                        <h1>
+                        </p> -->
+                        <h2 style="color:#3258a1;font-weight: 800;">
                             <span class="sr-only">{{ 'core.courses.aria:coursename' | translate }}</span>
                             <core-format-text [text]="course.fullname" contextLevel="course" [contextInstanceId]="course.id" />
-                        </h1>
-                        <ion-chip color="primary" *ngIf="course.categoryname" class="core-course-category ion-text-nowrap">
+                        </h2>
+                        <!-- <ion-chip color="primary" *ngIf="course.categoryname" class="core-course-category ion-text-nowrap">
                             <span class="sr-only">{{ 'core.courses.aria:coursecategory' | translate }}</span>
                             <ion-label>
                                 <core-format-text [text]="course.categoryname" contextLevel="coursecat"
                                     [contextInstanceId]="course.categoryid" />
                             </ion-label>
-                        </ion-chip>
+                        </ion-chip> -->
                     </ion-label>
-                    <ion-button *ngIf="displayOpenInBrowser" fill="clear" [href]="courseUrl" core-link [showBrowserWarning]="false"
+                    <!-- <ion-button *ngIf="displayOpenInBrowser" fill="clear" [href]="courseUrl" core-link [showBrowserWarning]="false"
                         [ariaLabel]="'core.openinbrowser' | translate" slot="end" [class.hidden]="!isTeacher"
                         class="core-course-oib-button">
                         <ion-icon name="fas-up-right-from-square" slot="icon-only" aria-hidden="true" />
-                    </ion-button>
+                    </ion-button> -->
                 </ion-item>
                 <ion-item class="ion-text-wrap" *ngIf="progress !== undefined || course.startdate || course.enddate">
                     <ion-label>
@@ -138,9 +147,9 @@
                 </ion-item>
             </ion-card>
         </ng-container>
-        <ion-button (click)="openCourse()" *ngIf="!isModal && canAccessCourse" expand="block" fill="outline" class="ion-text-wrap">
+        <!-- <ion-button (click)="openCourse()" *ngIf="!isModal && canAccessCourse" expand="block" fill="outline" class="ion-text-wrap">
             <ion-icon name="fas-eye" slot="start" aria-hidden="true" />
             {{ 'core.course.viewcourse' | translate }}
-        </ion-button>
+        </ion-button> -->
     </div>
 </ion-footer>

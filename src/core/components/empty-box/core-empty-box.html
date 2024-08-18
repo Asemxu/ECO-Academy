@@ -1,7 +1,7 @@
 @if (icon) {
-    <ion-icon [name]="icon" aria-hidden="true" />
+<ion-icon [name]="icon" aria-hidden="true" />
 } @else if (image) {
-    <img [src]="image" role="presentation" alt="">
+<img [src]="image" role="presentation" alt="">
 }
-<p *ngIf="message">{{ message }}</p>
+<p *ngIf="message" style="margin:1rem 2rem">{{ message }}</p>
 <ng-content />

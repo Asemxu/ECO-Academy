@@ -27,14 +27,21 @@ ion-item.item {
 
         &.ion-touched {
             &.ion-invalid {
-                --ion-item-border-color: var(--highlight-color-invalid);
-                --highlight-background: var(--ion-item-border-color);
-                --border-color: var(--ion-item-border-color);
+                // --ion-item-border-color: var(--highlight-color-invalid);
+                --ion-item-border-color: rgba(57,169,229,1);
+                // --highlight-background: var(--ion-item-border-color);
+                --highlight-background: rgba(57,169,229,1);
+                // --border-color: var(--ion-item-border-color);
+                --border-color: rgba(57,169,229,1);
+
             }
             &.ion-valid {
-                --ion-item-border-color: var(--highlight-color-valid);
-                --highlight-background: var(--ion-item-border-color);
-                --border-color: var(--ion-item-border-color);
+                // --ion-item-border-color: var(--highlight-color-valid);
+                --ion-item-border-color: rgba(57,169,229,1);
+                // --highlight-background: var(--ion-item-border-color);
+                --highlight-background: rgba(57,169,229,1);
+                // --border-color: var(--ion-item-border-color);
+                --border-color: rgba(57,169,229,1);
             }
         }
     }

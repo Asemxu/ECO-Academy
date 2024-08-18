@@ -1,10 +1,10 @@
-<ion-card *ngIf="module.handlerData && module.visibleoncoursepage !== 0"
+<ion-card style="box-shadow: -1px 2px 6px;" *ngIf="module.handlerData && module.visibleoncoursepage !== 0"
     class="activity-card core-course-module-handler {{module.handlerData.class}}" [class.core-course-module-with-view]="moduleHasView"
     [class.item-dimmed]="module.visible === 0 || module.uservisible === false" [class.activityinline]="activityInline"
     (click)="moduleClicked($event)" [button]="module.handlerData.action && module.uservisible"
     [attr.aria-label]="module.handlerData.a11yTitle ? module.handlerData.a11yTitle : null" id="core-course-module-{{module.id}}">
     <ng-container *ngIf="!module.handlerData.loading">
-        <ion-item class="ion-text-wrap">
+        <ion-item style="--background: #eff8fd" class="ion-text-wrap">
             <ion-label>
                 <div class="activity-main">
                     <core-mod-icon *ngIf="module.handlerData.icon" [modicon]="module.handlerData.icon" [modname]="module.modname"

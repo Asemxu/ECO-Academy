@@ -1,5 +1,7 @@
-<ion-button [hidden]="hideMenu" fill="clear" [ariaLabel]="ariaLabel" (click)="showContextMenu($event)" aria-haspopup="true"
-    [attr.aria-controls]="uniqueId">
-    <ion-icon [name]="icon" slot="icon-only" aria-hidden="true" />
+<!-- eslint-disable max-len -->
+<ion-button style="width:auto;height:auto" [hidden]="hideMenu" fill="clear" [ariaLabel]="ariaLabel" (click)="showContextMenu($event)"
+    aria-haspopup="true" [attr.aria-controls]="uniqueId">
+    <ion-icon style="color:#3258a1; box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.73);
+;border-radius:0.25rem;padding:0.15rem" [name]="icon" slot="icon-only" aria-hidden="true" />
 </ion-button>
 <ng-content />

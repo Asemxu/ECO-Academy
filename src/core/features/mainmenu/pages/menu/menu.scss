@@ -1,5 +1,9 @@
 @use "theme/globals" as *;
 
+.tab-menu-bottom{
+    background: #223161!important;
+}
+
 :host {
     ion-tabs {
         --menutabbar-size: var(--bottom-tabs-size);

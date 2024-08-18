@@ -30,6 +30,7 @@ import {
 import { CoreConstants, DownloadStatus } from '@/core/constants';
 import { CoreEventObserver, CoreEvents } from '@singletons/events';
 import { BehaviorSubject } from 'rxjs';
+import { CoreCourseAnyCourseData } from '@features/courses/services/courses';
 
 /**
  * Component to display a module entry in a list of modules.
@@ -46,6 +47,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CoreCourseModuleComponent implements OnInit, OnDestroy {
 
     @Input() module!: CoreCourseModuleData; // The module to render.
+    @Input() course!: CoreCourseAnyCourseData;
     @Input() section?: CoreCourseSection; // The section the module belongs to.
     @Input() showActivityDates = false; // Whether to show activity dates.
     @Input() showCompletionConditions = false; // Whether to show activity completion conditions.

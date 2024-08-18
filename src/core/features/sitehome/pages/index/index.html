@@ -1,6 +1,8 @@
+<!-- eslint-disable max-len -->
 <core-navbar-buttons slot="end" prepend>
-    <ion-button *ngIf="searchEnabled" (click)="openSearch()" [ariaLabel]="'core.courses.searchcourses' | translate">
-        <ion-icon name="fas-magnifying-glass" slot="icon-only" aria-hidden="true" />
+    <ion-button style="width:auto;height: auto;" *ngIf="searchEnabled" (click)="openSearch()"
+        [ariaLabel]="'core.courses.searchcourses' | translate">
+        <ion-icon class="icon-header" name="fas-magnifying-glass" slot="icon-only" aria-hidden="true" />
     </ion-button>
 </core-navbar-buttons>
 <ion-content>
@@ -51,12 +53,17 @@
 </ion-content>
 
 <ng-template #allCourseList>
-    <ion-card>
-        <ion-item button class="ion-text-wrap" (click)="openAvailableCourses()">
-            <ion-icon name="fas-graduation-cap" fixed-width slot="start" aria-hidden="true" />
+    <ion-card class="list-item-home">
+        <ion-item detail="false" button class="ion-text-wrap" (click)="openAvailableCourses()">
+            <ion-icon name="albums-sharp" class="first" fixed-width slot="start" aria-hidden="true" />
             <ion-label>
-                <p class="item-heading">{{ 'core.courses.availablecourses' | translate}}</p>
+                <!-- <p class="item-heading">{{ 'core.courses.availablecourses' | translate}}</p> -->
+                <p class="item-heading one">Cursos disponibles</p>
+                <!-- <p class="item-heading two">57 cursos habilitados</p> -->
+
             </ion-label>
+            <ion-icon class="second" name="arrow-forward-circle-sharp" fixed-width slot="end" aria-hidden="true" />
+
         </ion-item>
     </ion-card>
 </ng-template>
@@ -77,12 +84,16 @@
 </ng-template>
 
 <ng-template #enrolledCourseList>
-    <ion-card>
-        <ion-item button class="ion-text-wrap" (click)="openMyCourses()">
-            <ion-icon name="fas-graduation-cap" fixed-width slot="start" aria-hidden="true" />
+    <ion-card class="list-item-home">
+        <ion-item detail="false" button class="ion-text-wrap" (click)="openMyCourses()">
+            <ion-icon name="apps-sharp" class="first" fixed-width slot="start" aria-hidden="true" />
             <ion-label>
-                <p class="item-heading">{{ 'core.courses.mycourses' | translate}}</p>
+                <!-- <p class="item-heading">{{ 'core.courses.mycourses' | translate}}</p> -->
+                <p class="item-heading one">Mis cursos</p>
+                <!-- <p class="item-heading two">8 cursos inscritos</p> -->
             </ion-label>
+            <ion-icon name="arrow-forward-circle-sharp" class="second" fixed-width slot="end" aria-hidden="true" />
+
         </ion-item>
     </ion-card>
 </ng-template>

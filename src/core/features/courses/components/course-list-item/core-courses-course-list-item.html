@@ -1,6 +1,7 @@
+<!-- eslint-disable max-len -->
 <ion-card [class.core-course-list-item]="layout === 'list' || layout === 'listwithenrol'"
     [class.core-course-list-card]="layout === 'card' || layout === 'summarycard'" [class.item-dimmed]="course.hidden" (click)="openCourse()"
-    button [attr.aria-label]="course.displayname || course.fullname">
+    button [attr.aria-label]="course.displayname || course.fullname" class="card-list-course">
 
     <div *ngIf="layout === 'card' || layout === 'summarycard'" class="core-course-thumb" [class.core-course-color-img]="course.courseimage">
         <img *ngIf="course.courseimage" [url]="course.courseimage" core-external-content alt="" (error)="loadFallbackCourseIcon()" />
@@ -26,29 +27,41 @@
         </div>
     </ng-container>
 
-    <ion-item class="ion-text-wrap">
-
+    <ion-item style="left:-14px">
         <ng-container *ngIf="layout === 'list' || layout === 'listwithenrol'">
             <ion-icon *ngIf="!course.courseimage" name="fas-graduation-cap" slot="start" class="course-icon core-course-thumb"
                 aria-hidden="true" />
-            <ion-avatar *ngIf="course.courseimage" slot="start" class="core-course-thumb">
+            <img *ngIf="course.courseimage" style="height:100%;width:40%;object-fit: cover;" [url]="course.courseimage"
+                core-external-content alt="" (error)="loadFallbackCourseIcon()" />
+
+            <!-- <ion-avatar style="height:100%;width:150px;object-fit: cover;" *ngIf="course.courseimage" slot="start"
+                class="core-course-thumb">
                 <img [url]="course.courseimage" core-external-content alt="" (error)="loadFallbackCourseIcon()" />
-            </ion-avatar>
+            </ion-avatar> -->
         </ng-container>
 
-        <ion-label>
-            <div class="core-course-maininfo">
+        <ion-label style="margin:1rem 0 1rem 1rem">
+            <div style="margin:0" class="core-course-maininfo">
+                <ion-chip
+                    style="color:white;--background: linear-gradient(90deg, rgba(57,169,229,1) 0%, rgba(35,51,101,1) 100%)!important;font-size: 10px;padding:0.25rem 1rem;"
+                    *ngIf="course.categoryname" class="core-course-category core-course-additional-info ion-text-nowrap">
+                    <span class="sr-only">{{ 'core.courses.aria:coursecategory' | translate }}</span>
+                    <ion-label>
+                        <core-format-text [text]="course.categoryname" contextLevel="coursecat" [contextInstanceId]="course.categoryid" />
+                    </ion-label>
+                </ion-chip>
                 <p *ngIf="course.displayname && course.shortname && course.fullname !== course.displayname"
                     class="core-course-shortname core-course-additional-info">
                     <core-format-text [text]="course.shortname" contextLevel="course" [contextInstanceId]="course.id" />
                 </p>
 
-                <p class="item-heading">
+                <p class="item-heading"
+                    style="    max-width: 200px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;">
                     <ion-icon name="fas-star" *ngIf="course.isfavourite" [attr.aria-label]="'core.courses.favourite' | translate" />
                     <span class="sr-only" *ngIf="course.isfavourite">{{ 'core.courses.aria:favourite' | translate }}</span>
 
                     <span class="sr-only">{{ 'core.courses.aria:coursename' | translate }}</span>
-                    <core-format-text [text]="course.fullname" contextLevel="course" [contextInstanceId]="course.id" />
+                    <core-format-text class="title-format" [text]="course.fullname" contextLevel="course" [contextInstanceId]="course.id" />
 
                     <span *ngIf="(layout === 'list' || layout === 'listwithenrol') && !isEnrolled" class="core-course-enrol-icons">
                         <ion-icon *ngFor="let icon of enrolmentIcons" color="medium" [name]="icon.icon" [title]="icon.label | translate"
@@ -58,14 +71,6 @@
                     <ion-icon *ngIf="prefetchCourseData.downloadSucceeded" class="core-icon-downloaded" name="fam-cloud-done"
                         color="success" role="status" [attr.aria-label]="'core.downloaded' | translate" />
                 </p>
-
-                <ion-chip color="primary" *ngIf="course.categoryname"
-                    class="core-course-category core-course-additional-info ion-text-nowrap">
-                    <span class="sr-only">{{ 'core.courses.aria:coursecategory' | translate }}</span>
-                    <ion-label>
-                        <core-format-text [text]="course.categoryname" contextLevel="coursecat" [contextInstanceId]="course.categoryid" />
-                    </ion-label>
-                </ion-chip>
 
                 <ion-chip color="info" *ngIf="course.visible === 0"
                     class="core-course-additional-info ion-text-wrap core-course-hidden-message">
@@ -80,6 +85,8 @@
                 <core-progress-bar [progress]="progress" a11yText="core.courses.aria:courseprogress" />
             </div>
         </ion-label>
+        <ion-icon style="color:#39aae6;background:white;border-radius:1rem;font-size:3rem" name="arrow-forward-circle-sharp" fixed-width
+            slot="end" aria-hidden="true" />
     </ion-item>
 
 </ion-card>

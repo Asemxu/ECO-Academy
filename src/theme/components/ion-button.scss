@@ -42,7 +42,8 @@ ion-button {
     }
 
     &.button-disabled {
-        opacity: var(--mdl-button-disabled-opacity) !important;
+        //opacity: var(--mdl-button-disabled-opacity) !important;}
+        opacity: 1;
     }
 
     &.button-outline {

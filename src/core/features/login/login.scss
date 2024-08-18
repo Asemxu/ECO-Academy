@@ -1,9 +1,22 @@
 @use "theme/globals" as *;
+#login-form-container-parent{
+    --background: linear-gradient(0deg, rgba(35,51,101,1) 0%, rgba(57,169,229,1) 155%)!important;
+    --keyboard-offset:0px!important
+}
+.login-form-container{
+    padding-top:50px
+}
+.core-login-form{
+	padding:1rem
+}
 
+.input-rebrand{
+	--border-radius:2rem;
+	padding:0 1rem!important
+}
 :host {
     ion-content,
     ion-list {
-        --background: var(--core-login-background);
         --ion-item-background: var(--core-login-background);
         --color: var(--core-login-text-color);
     }
@@ -26,17 +39,17 @@
     }
 
     .core-login-info-box {
-        margin-bottom: 32px;
+        margin-bottom: 0px;
 
         .core-login-site {
             .core-login-site-logo {
-                width: 90%;
+                width: 50%;
                 max-width: 300px;
                 margin: 0px auto;
 
                 img {
                     max-width: 100%;
-                    max-height: 104px;
+                    height:150px;
                 }
             }
 
@@ -139,7 +152,10 @@
     }
 
     .core-login-login-button {
-        margin-top: 32px;
+        margin-top: 40px!important;
+        width:90%;
+        --border-radius: 2rem;
+        margin:auto
     }
 
     .core-login-login-inbrowser-button {

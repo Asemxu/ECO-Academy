@@ -1,3 +1,4 @@
+<!-- eslint-disable max-len -->
 <ion-item-divider [sticky]="true">
     <ion-label>
         <h2>{{ 'addon.block_myoverview.pluginname' | translate }}</h2>
@@ -20,14 +21,17 @@
 </ion-item-divider>
 <core-loading [hideUntil]="loaded">
 
-    <ion-row class="ion-hide-md-up addon-block-myoverview-filter" *ngIf="hasCourses">
+    <ion-row style="margin:1rem 1.5rem" class="ion-hide-md-up addon-block-myoverview-filter" *ngIf="hasCourses">
         <ion-col>
             <!-- Filter courses. -->
-            <ion-searchbar [(ngModel)]="textFilter" (ionInput)="filterTextChanged($event.target)"
-                (ionCancel)="filterTextChanged($event.target)" [placeholder]="'core.courses.filtermycourses' | translate" />
+            <ion-searchbar class="item-search" animated="true"
+                style="--border-radius: 2rem;--icon-color: #39aae6;--cancel-button-color:#39aae6;--clear-button-color:#39aae6"
+                [(ngModel)]="textFilter" (ionInput)="filterTextChanged($event.target)" (ionCancel)="filterTextChanged($event.target)"
+                [placeholder]="'core.courses.filtermycourses' | translate" />
         </ion-col>
     </ion-row>
-    <ion-row class="ion-justify-content-between ion-align-items-center addon-block-myoverview-filter" *ngIf="hasCourses">
+    <!-- <ion-row style="margin:1rem 2rem" class="ion-justify-content-between ion-align-items-center addon-block-myoverview-filter"
+        *ngIf="hasCourses">
         <ion-col size="auto" *ngIf="filters.enabled">
             <core-combobox [label]="'core.courses.filtermycourses' | translate" [selection]="filters.timeFilterSelected"
                 (onChange)="filterOptionsChanged($event)">
@@ -65,7 +69,6 @@
             </core-combobox>
         </ion-col>
         <ion-col>
-            <!-- Filter courses. -->
             <ion-searchbar class="ion-hide-md-down" [(ngModel)]="textFilter" (ionInput)="filterTextChanged($event.target)"
                 (ionCancel)="filterTextChanged($event.target)" [placeholder]="'core.courses.filtermycourses' | translate" />
         </ion-col>
@@ -93,7 +96,7 @@
                 <ion-icon slot="icon-only" name="fas-table-cells-large" aria-hidden="true" />
             </ion-button>
         </ion-col>
-    </ion-row>
+    </ion-row> -->
 
     <core-empty-box *ngIf="filteredCourses.length === 0" image="assets/img/icons/courses.svg">
         <p *ngIf="hasCourses" class="item-heading">
