@@ -45,7 +45,6 @@
             flex-grow: 1;
             align-self: center;
             @include margin-horizontal(null, var(--card-padding));
-
             .item-heading ion-icon {
                 @include margin-horizontal(8px, null);
                 vertical-align: middle;

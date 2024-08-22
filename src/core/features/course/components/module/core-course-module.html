@@ -12,7 +12,7 @@
                         [isBranded]="module.branded" />
                     <div style="margin:0" class="activity-title">
                         <p class="item-heading">
-                            <core-format-text [text]="module.handlerData.title" contextLevel="module" [contextInstanceId]="module.id"
+                            <core-format-text class="container-info-text" [text]="module.handlerData.title" contextLevel="module" [contextInstanceId]="module.id"
                                 [courseId]="module.course" [attr.aria-label]="module.handlerData.a11yTitle + ', ' + modNameTranslated" />
                             <ion-icon name="fas-lock" *ngIf="module.visible === 0 || module.uservisible === false"
                                 [attr.aria-label]="'core.restricted' | translate" />
