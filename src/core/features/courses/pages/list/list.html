@@ -26,7 +26,7 @@
         <ion-refresher-content pullingText="{{ 'core.pulltorefresh' | translate }}" />
     </ion-refresher>
 
-    <core-search-box style=" margin:1rem 1.5rem;" *ngIf="searchEnabled" (onSubmit)="search($event)" (onClear)="clearSearch()"
+    <core-search-box *ngIf="searchEnabled" (onSubmit)="search($event)" (onClear)="clearSearch()"
         [placeholder]="'core.courses.search' | translate" [searchLabel]="'core.courses.search' | translate" [autoFocus]="searchMode"
         searchArea="CoreCoursesSearch" [lengthCheck]="1" />
 

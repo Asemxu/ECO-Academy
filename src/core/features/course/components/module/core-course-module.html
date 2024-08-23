@@ -1,3 +1,4 @@
+<!-- eslint-disable max-len -->
 <ion-card style="box-shadow: -1px 2px 6px;" *ngIf="module.handlerData && module.visibleoncoursepage !== 0"
     class="activity-card core-course-module-handler {{module.handlerData.class}}" [class.core-course-module-with-view]="moduleHasView"
     [class.item-dimmed]="module.visible === 0 || module.uservisible === false" [class.activityinline]="activityInline"
@@ -12,8 +13,9 @@
                         [isBranded]="module.branded" />
                     <div style="margin:0" class="activity-title">
                         <p class="item-heading">
-                            <core-format-text class="container-info-text" [text]="module.handlerData.title" contextLevel="module" [contextInstanceId]="module.id"
-                                [courseId]="module.course" [attr.aria-label]="module.handlerData.a11yTitle + ', ' + modNameTranslated" />
+                            <core-format-text class="container-info-text" [text]="module.handlerData.title" contextLevel="module"
+                                [contextInstanceId]="module.id" [courseId]="module.course"
+                                [attr.aria-label]="module.handlerData.a11yTitle + ', ' + modNameTranslated" />
                             <ion-icon name="fas-lock" *ngIf="module.visible === 0 || module.uservisible === false"
                                 [attr.aria-label]="'core.restricted' | translate" />
                             <ion-icon *ngIf="prefetchStatusIcon$ | async as prefetchStatusIcon" [name]="prefetchStatusIcon" color="success"
