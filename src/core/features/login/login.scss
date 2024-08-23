@@ -1,10 +1,13 @@
 @use "theme/globals" as *;
 #login-form-container-parent{
-    --background: linear-gradient(0deg, rgba(35,51,101,1) 0%, rgba(57,169,229,1) 155%)!important;
+    --background: none!important;
+    --background-image:url("/assets/img/login-eco.png")!important;
+    background-image:url("/assets/img/login-eco.png")!important;
     --keyboard-offset:0px!important
 }
 .login-form-container{
-    padding-top:50px
+    padding-top:150px;
+    justify-content: center;
 }
 .core-login-form{
 	padding:1rem
