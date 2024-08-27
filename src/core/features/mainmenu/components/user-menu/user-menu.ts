@@ -224,10 +224,14 @@ export class CoreMainMenuUserMenuComponent implements OnInit, OnDestroy {
         }
 
         await this.close(event);
-
-        await CoreSites.logout({
+        console.log('hizo logout');
+        console.log({
             forceLogout: true,
             removeAccount: this.removeAccountOnLogout,
+        });
+        await CoreSites.logout({
+            forceLogout: true,
+            removeAccount: true,
         });
     }
 

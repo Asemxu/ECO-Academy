@@ -872,6 +872,7 @@ export class CoreLoginHelperProvider {
     async sessionExpired(data: CoreEventSessionExpiredData & CoreEventSiteData): Promise<void> {
         const siteId = data?.siteId;
         const currentSite = CoreSites.getCurrentSite();
+        const siteUrl= 'https://elearning.ceoacademy.edu.pe';
 
         if (!currentSite) {
             return;
@@ -895,15 +896,16 @@ export class CoreLoginHelperProvider {
         try {
             // Check authentication method.
             const info = currentSite.getInfo();
+            console.log('aqui es el problkemaaaaa');
             if (info !== undefined && info.username !== undefined) {
                 // If current page is already reconnect, stop.
-                if (CoreNavigator.isCurrent('/login/reconnect')) {
+                if (CoreNavigator.isCurrent('/login/credentials')) {
                     return;
                 }
-
-                await CoreUtils.ignoreErrors(CoreNavigator.navigate('/login/reconnect', {
+                console.log('el problema no es el if');
+                await CoreUtils.ignoreErrors(CoreNavigator.navigate('/login/credentials', {
                     params: {
-                        siteId,
+                        siteUrl,
                         ...redirectData,
                     },
                     reset: true,

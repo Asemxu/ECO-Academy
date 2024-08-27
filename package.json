@@ -152,7 +152,6 @@
         "@typescript-eslint/parser": "6.21.0",
         "check-es-compat": "3.2.0",
         "concurrently": "8.2.2",
-        "cordova-android": "^13.0.0",
         "cordova-plugin-moodleapp": "file:cordova-plugin-moodleapp",
         "cross-env": "7.0.3",
         "eslint": "8.57.0",
@@ -185,8 +184,7 @@
     },
     "cordova": {
         "platforms": [
-            "ios",
-            "android"
+            "ios"
         ],
         "plugins": {
             "@moodlehq/cordova-plugin-advanced-http": {

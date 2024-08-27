@@ -5,8 +5,9 @@
     background-image:url("/assets/img/login-eco.png")!important;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    --keyboard-offset:0px!important
+    background-size: cover;
+    //background-size: 100% 100%;
+    // :0px!important
 }
 .login-form-container{
     padding-top:150px;
@@ -18,7 +19,8 @@
 
 .input-rebrand{
 	--border-radius:2rem;
-	padding:0 1rem!important
+	padding:0 1rem!important;
+    background-color: rgba(0, 0, 0, 0.65);
 }
 :host {
     ion-content,

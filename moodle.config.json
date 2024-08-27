@@ -100,7 +100,7 @@
     "notificoncolor": "#f98012",
     "enableanalytics": false,
     "enableonboarding": true,
-    "forceColorScheme": "",
+    "forceColorScheme": "light",
     "forceLoginLogo": false,
     "ioswebviewscheme": "moodleappfs",
     "appstores": {
