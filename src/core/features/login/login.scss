@@ -20,8 +20,19 @@
 .input-rebrand{
 	--border-radius:2rem;
 	padding:0 1rem!important;
-    background-color: rgba(0, 0, 0, 0.65);
+    // background-color: rgba(0, 0, 0, 0.65);
 }
+
+.input-rebrand-text{
+    opacity: .5;
+    transition: all 500ms ease-in;
+}
+
+.input-rebrand-text:hover , .input-rebrand-text:focus , .input-rebrand-text:active{
+    opacity: 1;
+}
+
+
 :host {
     ion-content,
     ion-list {
