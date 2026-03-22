@@ -1,5 +1,5 @@
 {
-    "app_id": "com.ceoacademy.moodlemobile",
+    "app_id": "com.ceoacademy.mobile",
     "appname": "CEO Academy",
     "versioncode": 44100,
     "versionname": "4.4.1",
@@ -90,7 +90,7 @@
     "sites": [{
 		"name":"CEO Academy",
         "alias":"CEO",
-        "url":"https://elearning.ceoacademy.edu.pe"
+        "url":"https://escuela.adexperu.edu.pe"
 	}],
     "multisitesdisplay": "",
     "sitefindersettings": {},
@@ -104,7 +104,7 @@
     "forceLoginLogo": false,
     "ioswebviewscheme": "moodleappfs",
     "appstores": {
-        "android": "com.moodle.moodlemobile",
+        "android": "com.moodle.mobile",
         "ios": "id633359593"
     },
     "wsrequestqueuelimit": 10,

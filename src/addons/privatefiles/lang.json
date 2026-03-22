@@ -1,8 +1,8 @@
 {
-    "couldnotloadfiles": "The list of files could not be loaded.",
-    "emptyfilelist": "There are no files to show.",
-    "erroruploadnotworking": "Unfortunately it is currently not possible to upload files to your site.",
-    "files": "Files",
-    "privatefiles": "Private files",
-    "sitefiles": "Site files"
+    "couldnotloadfiles": "No se pudo cargar la lista de archivos.",
+    "emptyfilelist": "No hay archivos para mostrar.",
+    "erroruploadnotworking": "Lamentablemente actualmente no es posible cargar archivos a su sitio.",
+    "files": "Archivos",
+    "privatefiles": "Archivos Privados",
+    "sitefiles": "Archivos del Sitio"
 }
